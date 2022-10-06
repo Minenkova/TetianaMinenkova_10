@@ -1,8 +1,17 @@
 @font-face {
-  font-family: "MontserratRegular";
+  font-family: "Montserrat";
   src: url(/fonts/Montserrat-Regular.woff2);
 }
 @font-face {
   font-family: "MontserratBold";
   src: url(/fonts/Montserrat-Bold.woff2);
+}
+.wrap--gradient {
+  background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+  border-radius: 0px 0px 12px 12px;
+  width: 84%;
+  margin: 0 auto;
+}
+.wrap--gradient * {
+  outline: 1px solid rgb(192, 189, 189);
 }/*# sourceMappingURL=main.css.map */

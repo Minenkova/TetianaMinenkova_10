@@ -1,28 +1,4 @@
-@font-face {
-    font-family: 'MontserratRegular';
-    src: url(/fonts/Montserrat-Regular.woff2);
-}
-@font-face {
-    font-family: 'MontserratBold';
-    src: url(/fonts/Montserrat-Bold.woff2);
-}
+@import 'tools';
+@import 'header';
 
 
-$backColor: #5094f2;
-$primaryColor: #fff;
-$secondaryColor: #909090;
-$widthSize: 1022px;
-
-@mixin formatText ($size, $fw, $lh) {
-    font-size: $size;
-    font-weight: $fw;
-    line-height: $lh;
-    font-family: 'MontserratRegular';    
-}
-
-@mixin flex ($dir, $jc, $ai,) {
-    display: flex;
-    flex-direction: $dir;
-    justify-content: $jc;
-    align-items: $ai;
-}
