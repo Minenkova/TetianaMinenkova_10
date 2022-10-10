@@ -1,58 +1,160 @@
+* {
+    outline: 1px solid rgb(192, 189, 189);
+}
+
 .wrap--gradient {
     background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
     border-radius: 0px 0px 12px 12px;
-    width: $widthSize;
-    margin: 0 auto;
-    
-        * {
-            outline: 1px solid rgb(192, 189, 189);
+
+    .header {
+        position: relative;
+        z-index: 99;
+        width: $widthSize;
+        margin: 0 auto;
+
+        .wrap {
+            background: url(../images/header/Symbol.png) no-repeat;
+            background-position: center top;
+            z-index: 999;
+            height: 1000px;
+        }
+    }
+
+        .header__block {
+            @include flex (row, space-between, center);
+            width: 100%;
         }
 }
 
+.inner {
+    width: 45%;
+    @include flex (column, space-between, stretch);
 
-.wrap {
-    @include flex (row, space-around,center);
-    
-    .header__logo 
+        .info__list {
+        @include flex (row, space-between, center);
 
-.header__title 
+            .info__list--item{
+            color: $basicText;
 
-.title__img 
+                .info__link {
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 15px;
+                    text-align: center;
+                    letter-spacing: 1px;
+                    color: $basicText;
+                }
 
-.title__text 
+                .info__link:hover {
+                    background: #F0145A;
+                    @include transform;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .info__list--primary {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: $basicText;
+        }
+
+        .info__list--secondary {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: $basicText;
+        }
+
+        .header__nav{
+            
+            .header__list {
+                @include flex(row, space-around, center);
+                list-style-type: none;
+
+                    .list__item {
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 20px;
+                        color: $basicText;
+                    }
+                }
+        }
 }
 
-.header__logo 
+.header__title {
+    .title__text {
+        position: absolute;
+        left: 24%;
+        top: 42%;
+        @include formatText (38px, 700, 46px);
+        text-align: center;
+        color: $basicText;        
+    }
 
-.header__title 
+    .btn__menu {
+        position: absolute;
+        left: 48%;
+        top: 70%;
+    }
+}
 
-.title__img 
+.dropdown {
+    @include flex (row, center, center);
 
-.title__text 
+        .dropdown__menu {
+            width: 35%;
+            text-align: right;
+            list-style: none;
+            border-right: 4px solid rgba(255, 255, 255, 0.3);
+            padding: 0;
+            margin: 3%;
 
-.header__block 
+            .menu__item--active{
+                @include heroReg ();
+                background-image: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%);
+                color: transparent;
+                background-clip: text;
+                padding-right: 6%;
+                cursor: pointer;
+            }
 
-.header__info 
+                .menu__item {
+                    @include heroReg ();
+                    color: #B3B3BA;
+                    padding-bottom: 2%;
+                    padding-right: 6%;
+                    text-align: inherit;
 
-.list__info 
+                    &:hover {
+                        color: #F0145A;
+                        @include transform ();
+                        cursor: pointer;
+                    }
+                }
+        }
 
-.list__info--item 
+        .dropdown__desc {
+            width: 65%;
+            text-align: left;
+            color: $basicText;
 
-.header__nav 
+                .dropdown__title {
+                    @include h2Reg ();
+                    padding-bottom: 2%;
+                }
 
-.header__list 
-
-.list__item 
-
-.dropdown 
-
-.dropdown__menu 
-
-.menu__item 
-
-.dropdown__desc 
-
-.dropdown__title 
-
-.dropdown__text 
-
+                .dropdown__text {
+                    @include  intro ();                   
+                }
+        }
+}
