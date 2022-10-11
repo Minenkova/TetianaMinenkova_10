@@ -1,10 +1,12 @@
-* {
-    outline: 1px solid rgb(192, 189, 189);
-}
+// * {
+//     outline: 1px solid rgb(192, 189, 189);
+// }
 
 .wrap--gradient {
     background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
     border-radius: 0px 0px 12px 12px;
+    box-shadow: 0px 10px 10px -5px #CACADB,
+                0px 40px 10px -5px #E7E7F2;
 
     .header {
         position: relative;
@@ -94,8 +96,8 @@
 .header__title {
     .title__text {
         position: absolute;
-        left: 24%;
-        top: 42%;
+        left: 27%;
+        top: 37%;
         @include formatText (38px, 700, 46px);
         text-align: center;
         color: $basicText;        
@@ -155,6 +157,81 @@
 
                 .dropdown__text {
                     @include  intro ();                   
+                }
+        }
+}
+
+.section {
+    width: $widthSize;
+    margin: 0 auto;
+
+        .section__heading {
+            @include h3Caps ();
+            color: $activeRegular;
+            padding-top: 2%;
+        }
+
+        .section__title {
+            @include heroReg ();
+            @include gradientText ();
+            padding-bottom: 2%;
+            padding-top: 2%;
+        }
+
+        .section__content {
+            @include flex (row, stretch, flex-start);
+            flex-wrap: wrap;
+
+            .section__item {
+                width: 32%;
+                padding-right: 3%;
+                
+                    .section__img {
+                        padding-bottom: 2%;
+                    }
+
+                    .section__text{
+                        @include paragraphReg ();
+                        color: $basicText;
+                        padding: 3% 0 3% 0;
+                    } 
+            }
+        } 
+}
+
+.slider {
+    width: $widthSize;
+    margin: 0 auto;
+    @include flex (row, flex-start, center);
+    margin-top: 3%;
+    background-color: #F5F5FA;
+    // outline: 2px solid red;
+
+        .slider__content {
+            padding: 3%;
+
+                .slider__hading {
+                    @include h3Caps ();
+                    color: $activeRegular;
+                }
+
+                .slider__title {
+                    @include heroReg ();
+                    background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+                    background-clip: text;
+                    color: transparent;
+                    padding-bottom: 3%;
+                    padding-top: 1%;
+                }
+
+                .slider__subtitle {
+                    @include h4Reg ();
+                    color: #B3B3BA;
+                }
+
+                .slider__text {
+                    @include paragraphSmall ();
+                    color: #B3B3BA;
                 }
         }
 }
